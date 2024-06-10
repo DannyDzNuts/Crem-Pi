@@ -1,0 +1,58 @@
+MDScreen:
+    id: scr_fdbar
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDGridLayout: # Main Grid
+        cols: 2
+
+        MDGridLayout: # Sub Nav
+            cols: 1
+            size_hint_x: .280
+
+            MDNavigationDrawer:
+                id: nav_drawer
+                anchor: "left"
+                width: 225
+                radius: 0, dp(16), dp(16), 0
+
+                MDNavigationDrawerMenu:
+# SN - To-Gos                    
+                    MDNavigationDrawerLabel:
+                        text: "To-Go Orders"
+
+                    MDNavigationDrawerDivider:
+
+                    MDNavigationDrawerItem:
+                        MDNavigationDrawerItemText:
+                            text: "Show Active Orders"
+                    
+                    MDNavigationDrawerItem:
+                        MDNavigationDrawerItemText:
+                            text: "New Order"
+                    
+                    MDNavigationDrawerItem:
+                        height: 100
+
+# SN - Specials 86
+                    MDNavigationDrawerLabel:
+                        text: "Specials & 86"
+
+                    MDNavigationDrawerDivider:
+
+                    MDNavigationDrawerItem:
+                        MDNavigationDrawerItemText:
+                            text: "Tonight's Specials"
+
+                    MDNavigationDrawerItem:
+                        MDNavigationDrawerItemText:
+                            text: "86 List"
+                    
+                    MDNavigationDrawerItem:
+                        height: 80
+                    
+                    MDNavigationDrawerItem:
+                        MDNavigationDrawerItemText:
+                            text: "Exit"
+        ScrollView:
+            MDList:
+                id:lst_activeorders
